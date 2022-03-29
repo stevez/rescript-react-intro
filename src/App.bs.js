@@ -2,9 +2,11 @@
 
 import * as React from "react";
 import * as RescriptReactRouter from "@rescript/react/src/RescriptReactRouter.bs.js";
+import * as Store$RescriptReactIntro from "./Store.bs.js";
 import * as NavBar$RescriptReactIntro from "./NavBar.bs.js";
 
 function App(Props) {
+  React.useReducer(Store$RescriptReactIntro.reducer, Store$RescriptReactIntro.initialState);
   var url = RescriptReactRouter.useUrl(undefined, undefined);
   var match = url.path;
   var component;

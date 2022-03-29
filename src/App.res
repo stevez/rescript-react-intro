@@ -1,5 +1,7 @@
 @react.component
 let make = () => {
+  let (state, dispatch) = React.useReducer(Store.reducer, Store.initialState)
+  
   let url = RescriptReactRouter.useUrl()
 
   let component = switch url.path {
